@@ -1,0 +1,25 @@
+#about-clients{
+    padding: 140px 0;
+    background-color: $fifth-color;
+
+    background-image: url("../images/about-clients.svg");
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+.about-clients{
+    width: 100%;
+    text-align: center;
+    &__title{
+        margin-bottom: 64px;
+        @include textStyle($fs:48px, $fw:700, $lh:48px, $clr:$primary-color);
+    }
+}
+.clients{
+    @include display($wrap:nowrap, $direction:row, $items:center, $justify:space-between);
+    // gap: 80px;
+    & img{
+
+        // flex: 0 0 20%;
+        // width: 100%;
+    }
+}

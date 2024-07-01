@@ -1,0 +1,122 @@
+#about-directors{
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 168px;
+    background-color: rgba(0, 64, 71, 1);
+
+    background-image: url("../images/about-directors-img.svg"), url("../images/about-directors-img2.svg");
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+
+.about-directors{
+    width: 100%;
+    text-align: center;
+    &__title{
+        margin-bottom: 64px;
+        @include textStyle($fs:48px, $fw:700, $lh:48px, $clr:$primary-color);
+    }
+}
+
+.directors{
+    @include display($wrap:wrap, $direction:row, $items:flex-start, $justify:space-between);
+    row-gap: 76px;
+}
+.director{
+    width: 100%;
+    @include display($wrap:wrap, $direction:column, $items:center, $justify:flex-start);
+    &__wrapper{
+        flex: 0 0 31%;
+        padding: 32px 24px 56px 24px;
+        background-color: $fifth-color;
+        position: relative;
+        &:hover{
+            background-color: rgba(0, 37, 41, 1)
+        }
+    }
+    &__info{
+        display: none;
+    }
+    &__name{
+        margin-top: 16px;
+        @include textStyle($fs:18px, $fw:700, $lh:28px, $clr:$fourth-color);
+    }
+    &__position{
+        font-style: italic;
+        @include textStyle($fs:13px, $fw:400, $lh:18px, $clr:$primary-color);
+    }
+    &__text{
+        padding: 0 24px;
+        @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:$primary-color);
+    }
+    &__social{
+        display: flex;
+        gap: 16px;
+        margin-top: 24px;
+    }
+    &__plus{
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        background-color: $secondary-color;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        bottom: -28px;
+        left: 0;
+        right: 0;
+        margin:  0 auto;
+        transition: .3s all linear;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(121, 200, 199, 1);
+        }
+    }
+}
+
+.director__wrapper:hover .director{
+    display: none;
+}
+.director__wrapper:hover .director__info{
+    @include display($wrap:wrap, $direction:column, $items:center, $justify:flex-start);
+}
+.director__wrapper:hover .director__plus img{
+    transform: rotate(45deg);
+    transition: .2s all linear;
+}
+.director__name--hover{
+    margin-top: 0;
+}
+
+@media (max-width:800px) {
+    #about-directors{
+        padding-top: 100px;
+        padding-bottom: 128px;
+    }  
+    .about-directors{
+        width: 100%;
+        text-align: center;
+        &__title{
+            margin-bottom: 48px;
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+    .director{
+        &__wrapper{
+            flex: 0 0 45%;
+        }
+    }
+}
+
+@media (max-width:576px) {
+    #about-directors{
+        padding-top: 88px;
+        background-position:0 calc(50% - 1080px), bottom right;
+    }
+    .director{
+        &__wrapper{
+            flex: 0 0 100%;
+        }
+    }
+}
