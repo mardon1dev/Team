@@ -102,23 +102,6 @@
             max-width: 100%;
             flex-direction: row;
             justify-content: space-between;
-            gap: 51px;
-            &--copyright{
-                word-break: keep-all;
-                @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:#99A8A9);
-            }
-            color: #99A8A9;
-        }
-        &__social{
-            @include display($wrap:nowrap, $direction:row, $items:flex-start, $justify:flex-start);
-            gap: 16px;
-            &--link{
-                display: inline-block;
-                transition: .3s all linear;
-                &:hover > svg > path{
-                    fill: $secondary-color;
-                }
-            }
         }
     }
 }
