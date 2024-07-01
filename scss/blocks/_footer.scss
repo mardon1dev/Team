@@ -1,0 +1,149 @@
+#footer{
+    width: 100%;
+    padding: 48px 0;
+    background-color: $fifth-color;
+}
+.footer{
+    width: 100%;
+    @include display($wrap:nowrap, $direction:row, $items:center, $justify:space-between);
+    &__left{
+        width: 100%;
+        display: flex;
+        gap: 125px;
+    }
+    &__logo{
+        &--link{
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+    }
+    &__list{
+        @include display($wrap:nowrap, $direction:row, $items:flex-start, $justify:flex-start);
+        gap: 40px;
+        &--link{
+            @include textStyle($fs:18px, $fw:600, $lh:28px, $clr:$primary-color);
+            transition: .3s color linear;
+            &:hover{
+                color: $secondary-color;
+            }
+        }
+    }
+    &__address{
+        @include display($wrap:nowrap, $direction:column, $items:center, $justify:flex-start);
+        &--text{
+            @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:#99A8A9);
+        }
+        &--link{
+            color: #99A8A9;
+        }
+    }
+    &__info{
+        max-width: 255px;
+        width: 100%;
+        @include display($wrap:nowrap, $direction:column, $items:end, $justify:flex-start);
+        gap: 51px;
+        &--copyright{
+            word-break: keep-all;
+            @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:#99A8A9);
+        }
+        color: #99A8A9;
+    }
+    &__social{
+        @include display($wrap:nowrap, $direction:row, $items:flex-start, $justify:flex-start);
+        gap: 16px;
+        &--link{
+            display: inline-block;
+            transition: .3s all linear;
+            &:hover > svg > path{
+                fill: $secondary-color;
+            }
+        }
+    }
+}
+
+@media (max-width:800px) {
+    #footer{
+        padding: 56px 0;
+    }
+    .footer{
+        flex-direction: column;
+        gap: 32px;
+        &__left{
+            justify-content: space-between;
+            gap: 0px;
+        }
+        &__logo{
+            &--link{
+                display: inline-block;
+                margin-bottom: 25px;
+            }
+        }
+        &__list{
+            align-items: flex-end;
+            gap: 40px;
+            &--link{
+                @include textStyle($fs:18px, $fw:600, $lh:28px, $clr:$primary-color);
+                transition: .3s color linear;
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
+        }
+        &__address{
+            align-items: flex-end;
+            &--text{
+                @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:#99A8A9);
+            }
+            &--link{
+                color: #99A8A9;
+            }
+        }
+        &__info{
+            max-width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 51px;
+            &--copyright{
+                word-break: keep-all;
+                @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:#99A8A9);
+            }
+            color: #99A8A9;
+        }
+        &__social{
+            @include display($wrap:nowrap, $direction:row, $items:flex-start, $justify:flex-start);
+            gap: 16px;
+            &--link{
+                display: inline-block;
+                transition: .3s all linear;
+                &:hover > svg > path{
+                    fill: $secondary-color;
+                }
+            }
+        }
+    }
+}
+@media (max-width:576px) {
+    .footer{
+        &__left{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__address{
+            margin-top: 24px;
+            align-items: center;
+        }
+        &__info{
+            margin-top: 40px;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+
+
+}

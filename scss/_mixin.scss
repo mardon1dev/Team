@@ -1,0 +1,25 @@
+@mixin display($wrap, $direction, $items, $justify){
+    display: flex;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    align-items: $items;
+    justify-content: $justify;
+}
+
+
+@mixin textStyle($fs, $fw, $lh, $clr){
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;    
+    color: $clr;
+}
+
+@mixin buttonStyle($maxWidth, $paddingY, $borderColor, $borderRadius ,$textColor){
+    max-width: $maxWidth;
+    width: 100%;
+    padding: $paddingY 0;
+    @include display($wrap:nowrap, $direction:row, $items:center, $justify:center);
+    border: 2px solid $borderColor;
+    border-radius: $borderRadius;
+    color: $textColor;
+}

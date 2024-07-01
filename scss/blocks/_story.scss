@@ -1,0 +1,77 @@
+#story{
+    width: 100%;
+    padding: 140px 0;
+    background-image: url("../images/story-bg-top.svg"),url("../images/story-bg-bottom.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+}
+
+.story{
+    width: 100%;
+    &__title{
+        margin-bottom: 92px;
+        @include textStyle($fs:48px, $fw:700, $lh:48px, $clr:$primary-color);
+        text-align: center;
+        &--span{
+            color: $fourth-color;
+        }
+    }
+}
+.testimonials{
+    width: 100%;
+    @include display($wrap:nowrap, $direction:row, $items:flex-start, $justify:space-between);
+    gap: 30px;
+}
+.testimonial{
+    max-width: 350px;
+    width: 100%;
+    @include display($wrap:nowrap, $direction:column, $items:center, $justify:flex-start);
+    text-align: center;
+    position: relative;
+    &__bookmark{
+        position: absolute;
+        top: -36px;
+        z-index: -1;
+    }
+    &__text{
+        margin-bottom: 24px;
+        @include textStyle($fs:15px, $fw:600, $lh:25px, $clr:$primary-color);
+    }
+    &__owner{
+        @include textStyle($fs:18px, $fw:700, $lh:28px, $clr:$fourth-color);
+    }
+    &__position{
+        margin-bottom: 32px;
+        font-style: italic;
+        @include textStyle($fs:13px, $fw:500, $lh:28px, $clr:$primary-color);
+    }
+}
+
+@media (max-width:800px) {
+    #story{
+        padding: 100px 0;
+    }
+    .story{
+        max-width: 573px;
+        margin: 0 auto;
+        &__title{
+            margin-bottom: 48px;
+            font-size: 32px;
+            line-height: 32px;
+            text-align: center;
+        }
+    }
+    .testimonials{
+        flex-direction: column;
+        align-items: center;
+        gap: 84px;
+    }
+    .testimonial{
+        max-width: 100%;
+    }
+}
+@media (max-width:400px) {
+    #story{
+        padding: 140px 0 164px;
+    }
+}

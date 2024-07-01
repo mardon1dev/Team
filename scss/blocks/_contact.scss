@@ -1,0 +1,49 @@
+#contact{
+    width: 100%;
+    padding: 76px 0;
+    background-color: $secondary-color;
+    background-image: url("../images/contact-bg.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+.contact{
+    width: 100%;
+    @include display($wrap:nowrap, $direction:row, $items:center, $justify:space-around);
+    &__title{
+        @include textStyle($fs:48px, $fw:700, $lh:48px, $clr:$fifth-color);
+    }
+    &__link{
+        @include buttonStyle($maxWidth:153px, $paddingY:10px, $borderColor:$fifth-color, $borderRadius:24px ,$textColor:$fifth-color);
+        &:hover{
+            background-color: $fifth-color;
+            color: $primary-color;
+        }
+    }
+}
+@media (max-width:800px) {
+    #contact{
+        padding: 84px 0;
+    }
+    .contact{
+        width: 100%;
+        @include display($wrap:wrap, $direction:row, $items:center, $justify:space-around);
+        &__title{
+            font-size: 32px;
+            line-height: 32px;
+        }
+        &__link{
+            @include buttonStyle($maxWidth:153px, $paddingY:10px, $borderColor:$fifth-color, $borderRadius:24px ,$textColor:$fifth-color);
+            &:hover{
+                background-color: $fifth-color;
+                color: $primary-color;
+            }
+        }
+    }
+}
+@media (max-width:576px) {
+    .contact{
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+}

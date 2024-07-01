@@ -1,0 +1,182 @@
+#build{
+    padding: 140px 0;
+    background-color: $fifth-color;
+    background-image: url("../images/build-bg.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.build{
+    &__line{
+        margin-bottom: 54px;
+        display: inline-block;
+        width: 50px;
+        height: 4px;
+        background-color: $secondary-color;
+    }
+    &__main{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__info{
+        max-width: 415px;
+        width: 100%;
+        &--title{
+            @include textStyle($fs:48px,$fw:700, $lh:48px, $clr:$primary-color);
+        }
+    }
+}
+
+.superiority{
+    &__list{
+        max-width: 540px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        &--link{
+            width: 100%;
+            display: flex;
+            gap: 39px;
+        }
+        &--image{
+            width: 56px;
+            height: 56px;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                width: 56px;
+                height: 56px;
+                background: rgba(44, 98, 105, 1);
+                opacity: .5;
+                top: 16px;
+                left: 16px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+.information{
+    width: 100%;
+    @include display($wrap:wrap, $direction:column, $items:flex-start, $justify:flex-start);
+    gap: 16px;
+    &__title{
+        @include textStyle($fs:18px, $fw:700, $lh:28px, $clr:$secondary-color);
+    }
+    &__text{
+        @include textStyle($fs:15px, $fw:400, $lh:25px,  $clr:$primary-color);
+    }
+}
+
+@media (max-width:800px) {
+    #build{
+        padding: 100px 0;
+        background-position: top right;
+    }
+    .build{
+        max-width: 573px;
+        width: 100%;
+        margin: 0 auto;
+        &__line{
+            margin-bottom: 32px;
+        }
+        &__main{
+            flex-direction: column;
+            gap: 56px;
+        }
+        &__info{
+            &--title{
+                font-size: 32px;
+                line-height: 32px;
+            }
+        }
+    }
+    
+    .superiority{
+        &__list{
+            max-width: 540px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            &--link{
+                width: 100%;
+                display: flex;
+                gap: 39px;
+            }
+            &--image{
+                width: 72px;
+                height: 72px;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 72px;
+                    height: 72px;
+                    background: rgba(44, 98, 105, 1);
+                    opacity: .5;
+                    top: 16px;
+                    left: 16px;
+                    border-radius: 50%;
+                }
+            }
+            &--img{
+                width: 72px;
+                height: 72px;
+            }
+        }
+    }
+    .information{
+        width: 100%;
+        @include display($wrap:wrap, $direction:column, $items:flex-start, $justify:flex-start);
+        gap: 16px;
+        &__title{
+            @include textStyle($fs:18px, $fw:700, $lh:28px, $clr:$secondary-color);
+        }
+        &__text{
+            @include textStyle($fs:15px, $fw:400, $lh:25px,  $clr:$primary-color);
+        }
+    }
+}
+
+@media (max-width:400px) {
+    #build{
+        padding: 64px 0;
+        background-position: top right;
+    }
+    .superiority{
+        &__list{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            &--link{
+                flex-direction: column;
+                align-items: center;
+                gap: 48px;
+            }
+            &--image{
+                width: 56px;
+                height: 56px;
+                &::before{
+                    width: 56px;
+                    height: 56px;
+                }
+            }
+            &--img{
+                width: 56px;
+                height: 56px;
+            }
+        }
+    }
+    .information{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+}
