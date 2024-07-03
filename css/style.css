@@ -1014,4 +1014,119 @@ body {
   .clients img {
     width: 150px;
   }
+}
+#contact-form {
+  width: 100%;
+  padding-bottom: 120px;
+  background-image: url("../images/contact-background2.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.contact-form__info {
+  max-width: 555px;
+  width: 100%;
+}
+.contact-form .contact-info__title {
+  margin-bottom: 16px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 100px;
+  color: rgb(255, 255, 255);
+}
+.contact-form .contact-info__subtitle {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: rgb(246, 126, 126);
+}
+.contact-form .contact-info__list {
+  margin-top: 32px;
+  gap: 24px;
+}
+.contact-form .contact-info__link {
+  align-items: center;
+}
+.contact-form .contact-info__link .information {
+  margin-right: 10px;
+}
+
+.form {
+  max-width: 542px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.form__input, .form__textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-left: 14px;
+  padding-bottom: 17px;
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  caret-color: rgb(255, 255, 255);
+}
+.form__input::-moz-placeholder, .form__textarea::-moz-placeholder {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 25px;
+  color: rgb(153, 184, 187);
+  letter-spacing: -0.115384616px;
+}
+.form__input::placeholder, .form__textarea::placeholder {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 25px;
+  color: rgb(153, 184, 187);
+  letter-spacing: -0.115384616px;
+}
+.form__textarea {
+  height: 84px;
+  resize: none;
+}
+.form__button {
+  margin-top: 24px;
+  max-width: 123px;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 24px;
+  color: rgb(1, 47, 52);
+  transition: 0.3s all linear;
+}
+.form__button:hover {
+  cursor: pointer;
+  background: rgb(1, 47, 52);
+  border: 2px solid rgb(1, 47, 52);
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-form .contact-info__list {
+    max-width: 100%;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */
